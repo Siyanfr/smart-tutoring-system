@@ -45,6 +45,11 @@ public class Student extends User {
     public List<Integer> getEnrolledCourseIds() { return enrolledCourseIds; }
     public void setOverallProgress(double progress) { this.overallProgress = progress; }
 
+    // Method for CSV file handling - sets password hash directly without re-hashing
+    public void setPasswordHashDirectly(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
     @Override
     public String getUserType() {
         return "Student";

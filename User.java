@@ -29,6 +29,7 @@ public abstract class User {
     public int getUserId() { return userId; }
     public String getName() { return name; }
     public String getEmail() { return email; }
+    public String getPasswordHash() { return passwordHash; } // For CSV file handling
 
     public abstract String getUserType();
 }

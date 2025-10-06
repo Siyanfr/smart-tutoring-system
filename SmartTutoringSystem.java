@@ -20,6 +20,9 @@ public class SmartTutoringSystem {
         // Initialize sample data
         initializeSampleData();
 
+        // Load registered students from CSV file
+        loadRegisteredStudents();
+
         // Start login system
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
@@ -27,8 +30,9 @@ public class SmartTutoringSystem {
         while (running) {
             System.out.println("\n=== LOGIN MENU ===");
             System.out.println("1. Login");
-            System.out.println("2. View Sample Credentials");
-            System.out.println("3. Exit");
+            System.out.println("2. Register as Student");
+            System.out.println("3. View Sample Credentials");
+            System.out.println("4. Exit");
             System.out.print("Select an option: ");
 
             try {
@@ -39,9 +43,12 @@ public class SmartTutoringSystem {
                         handleLogin(scanner);
                         break;
                     case 2:
-                        displaySampleCredentials();
+                        handleRegistration(scanner);
                         break;
                     case 3:
+                        displaySampleCredentials();
+                        break;
+                    case 4:
                         System.out.println("Thank you for using Smart Tutoring System!");
                         running = false;
                         break;
@@ -234,5 +241,52 @@ public class SmartTutoringSystem {
         System.out.println("║ ADMIN:                                                ║");
         System.out.println("║   Email: admin@system.edu    | Password: admin123    ║");
         System.out.println("╚═══════════════════════════════════════════════════════╝");
+    }
+
+    /**
+     * Loads registered students from CSV file and adds them to the system
+     */
+    private static void loadRegisteredStudents() {
+        List<Student> registeredStudents = StudentRegistration.loadStudentsFromCSV();
+
+        for (Student student : registeredStudents) {
+            // Check if student is not already in allUsers (avoid duplicates)
+            boolean exists = false;
+            for (User user : allUsers) {
+                if (user.getEmail().equalsIgnoreCase(student.getEmail())) {
+                    exists = true;
+                    break;
+                }
+            }
+
+            if (!exists) {
+                allUsers.add(student);
+            }
+        }
+    }
+
+    /**
+     * Handles student registration process
+     * @param scanner Scanner for user input
+     */
+    private static void handleRegistration(Scanner scanner) {
+        Student newStudent = StudentRegistration.showRegistrationForm(scanner);
+
+        if (newStudent != null) {
+            // Add the new student to the system
+            allUsers.add(newStudent);
+
+            // Optionally, add to admin's system users list if admin exists
+            for (User user : allUsers) {
+                if (user instanceof Admin) {
+                    ((Admin) user).addUser(newStudent);
+                    break;
+                }
+            }
+
+            System.out.println("\n✓ You can now login with your credentials!");
+        } else {
+            System.out.println("\n✗ Registration failed. Please try again.");
+        }
     }
 }

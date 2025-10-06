@@ -1,5 +1,6 @@
 // MultipleChoiceQuiz.java - Multiple choice quiz implementation
 import java.util.Scanner;
+import java.util.*;
 
 public class MultipleChoiceQuiz extends Quiz {
 

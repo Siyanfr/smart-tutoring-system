@@ -227,20 +227,20 @@ public class SmartTutoringSystem {
     }
 
     private static void displaySampleCredentials() {
-        System.out.println("\n╔═══════════════════════════════════════════════════════╗");
-        System.out.println("║           SAMPLE LOGIN CREDENTIALS                    ║");
-        System.out.println("╠═══════════════════════════════════════════════════════╣");
-        System.out.println("║ STUDENTS:                                             ║");
-        System.out.println("║   Email: john@student.edu    | Password: pass123      ║");
-        System.out.println("║   Email: jane@student.edu    | Password: pass123      ║");
-        System.out.println("║   Email: mike@student.edu    | Password: pass123      ║");
-        System.out.println("║                                                       ║");
-        System.out.println("║ TUTOR:                                                ║");
-        System.out.println("║   Email: maria@tutor.edu     | Password: tutor123    ║");
-        System.out.println("║                                                       ║");
-        System.out.println("║ ADMIN:                                                ║");
-        System.out.println("║   Email: admin@system.edu    | Password: admin123    ║");
-        System.out.println("╚═══════════════════════════════════════════════════════╝");
+        System.out.println("\n╔═════════════════════════════════════════════════════════╗");
+        System.out.println("║              SAMPLE LOGIN CREDENTIALS                   ║");
+        System.out.println("╠═════════════════════════════════════════════════════════╣");
+        System.out.println("║ STUDENTS:                                               ║");
+        System.out.println("║   Email: john@student.edu    | Password: pass123        ║");
+        System.out.println("║   Email: jane@student.edu    | Password: pass123        ║");
+        System.out.println("║   Email: mike@student.edu    | Password: pass123        ║");
+        System.out.println("║                                                         ║");
+        System.out.println("║ TUTOR:                                                  ║");
+        System.out.println("║   Email: maria@tutor.edu     | Password: tutor123       ║");
+        System.out.println("║                                                         ║");
+        System.out.println("║ ADMIN:                                                  ║");
+        System.out.println("║   Email: admin@system.edu    | Password: admin123       ║");
+        System.out.println("╚═════════════════════════════════════════════════════════╝");
     }
 
     /**

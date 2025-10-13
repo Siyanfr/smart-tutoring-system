@@ -125,9 +125,9 @@ public class StudentMenuManager extends MenuManager {
             }
 
             if (selectedQuiz != null) {
-                int score = selectedQuiz.evaluateQuiz();
+                System.out.println("\n" + currentUser.getName() + " is taking the quiz: " + selectedQuiz.getSubject());
+                int score = selectedQuiz.evaluateQuiz(); // prints quiz once and calculates score
                 studentProgress.addCompletedQuiz(selectedQuiz, score);
-                ((Student) currentUser).takeQuiz(selectedQuiz);
             }
         } catch (NumberFormatException e) {
             System.out.println("Invalid input.");

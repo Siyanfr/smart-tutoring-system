@@ -112,60 +112,6 @@ java SmartTutoringSystem
 4. View all system users
 5. Monitor system statistics
 
-## OOP Concepts Demonstrated
-
-### 1. **Inheritance**
-- `Student`, `Tutor`, and `Admin` extend `User`
-- `MultipleChoiceQuiz` and `TrueFalseQuiz` extend `Quiz`
-- `MultipleChoiceQuestion` and `TrueFalseQuestion` extend `Question`
-- `StudentMenuManager`, `TutorMenuManager`, and `AdminMenuManager` extend `MenuManager`
-
-### 2. **Polymorphism**
-- Method overriding in `evaluateQuiz()` and `checkAnswer()`
-- Method overriding in `displayMenu()` for different user types
-- Interface implementation in `Tutor` implementing `RecommendationProvider`
-
-### 3. **Encapsulation**
-- Private/protected instance variables with public getters
-- Password hashing for security
-- Controlled access to user data
-
-### 4. **Abstraction**
-- Abstract classes: `User`, `Question`, `Quiz`, `MenuManager`
-- Interface: `RecommendationProvider`
-- Abstract methods implemented by subclasses
-
-### 5. **Exception Handling**
-- Custom `QuizNotFoundException` for quiz retrieval errors
-- Try-catch blocks for input validation
-
-## Sample Data Included
-
-### Lessons:
-1. Introduction to Java (Easy)
-2. Object-Oriented Programming Basics (Medium)
-3. Data Structures Introduction (Medium)
-4. Advanced Algorithms (Hard)
-
-### Quizzes:
-1. Java Basics (Easy) - Multiple Choice
-2. OOP Concepts (Medium) - Multiple Choice
-3. Programming Facts (Easy) - True/False
-4. Data Structures (Hard) - Multiple Choice
-
-## Key Classes and Their Responsibilities
-
-| Class | Responsibility |
-|-------|----------------|
-| `User` | Base authentication and user information |
-| `Student` | Student-specific functionality and progress tracking |
-| `Tutor` | Quiz creation and student management |
-| `Admin` | System administration and user management |
-| `QuizManager` | Centralized quiz storage and retrieval |
-| `LessonManager` | Lesson storage and browsing |
-| `ProgressTracker` | Track and report student performance |
-| `RecommendationEngine` | Generate personalized learning recommendations |
-
 ## Future Enhancements (Out of Scope)
 - File handling for persistent data storage (CSV/JSON)
 - Advanced AI/ML recommendation algorithms
@@ -190,5 +136,3 @@ java SmartTutoringSystem
 - All data is stored in memory and will reset when the program closes
 - Input validation is basic; handle edge cases as needed
 
-## License
-Educational project for OOP demonstration purposes.
